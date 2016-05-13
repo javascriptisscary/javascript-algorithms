@@ -1,0 +1,32 @@
+<script>
+    
+    //Check if a string ends with the given target string
+    function confirmEnding(str, target)
+    {
+        var targetLength;
+        var ending;
+        
+        targetLength= target.length;
+        //slice off the ending of str with the length of target
+        ending =str.slice(str.length -targetLength);
+      
+      if (ending === target)
+      {
+          console.log(true);
+          return true;
+      }
+      else
+      {
+          console.log(false);
+          return false;
+      }
+    }
+    
+    confirmEnding("Bastian", "n"); //true
+    confirmEnding("Connor", "n"); //false
+    confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification"); //false
+    confirmEnding("He has to give me a new name", "name"); //true
+    confirmEnding("He has to give me a new name", "me"); //true
+    confirmEnding("He has to give me a new name", "na"); //false
+    confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain"); //false
+</script>

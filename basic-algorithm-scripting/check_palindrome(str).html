@@ -1,0 +1,27 @@
+<script>
+//if word or phrase is palindrome return true, if not, false;
+
+function palindrome(str) {
+  
+  var normal = str.toLowerCase().replace(/[^0-9a-z]/gi, '');
+  var reverse = normal.split("").reverse().join("");
+  
+  
+  
+  console.log(normal + " " + reverse);
+  if (reverse == normal) {
+    console.log("true");
+    return true;
+  }
+  else {
+    console.log("false");
+    return false;
+  }
+    
+    
+}
+
+
+
+palindrome("A man, a plan, a canal. Panama");
+</script>

@@ -1,0 +1,53 @@
+<script>
+    //return each word with a captialized first letter
+    // and everything else is lower case.
+    // with no regex cuz why make life easy.
+    
+  function titleCase(str)
+  {
+    var string_array =[];
+    var new_string_array =[];
+    var final =[];
+    
+    string_array = str.split(" ");
+    
+    for (var i=0; i < string_array.length; i++)
+    {
+      // moves seperate letters of word into array
+      // (because strings are immutable)  
+      var letter_array = string_array[i].split("");
+      
+      
+      //grab first letter in array and make uppercase
+      var capital = letter_array[0].toUpperCase();
+      
+      //grab lowercase all letters after position 0 with array slice
+      var lowercase = letter_array.slice(1);
+      
+      //turn them back into an array (sheesh) and downcase
+      lowercase = lowercase.join("").toLowerCase();
+      
+      //combine the now seperate capital and lowercase letters
+      var word = capital + lowercase
+      
+      //push onto final array
+      final.push(word);
+      
+     
+      
+      
+      
+    }
+    
+    //return final array as a string
+    return final.join(" ");
+  }
+
+  titleCase("I'm a little tea pot");
+  
+    
+    
+    
+    
+    
+</script>

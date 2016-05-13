@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<script>
+
+function findLongestWord(str) {
+  
+  var string_array = [];
+  var x = 0;
+  
+  
+  //grab strings seperated by a space
+  string_array = str.split(" ");
+  console.log(string_array);
+  //find longest string in array
+  var item;
+  for (i=0; i<string_array.length; i++) {
+    
+    if (string_array[i].length > x) {
+      x = string_array[i].length;
+      console.log(string_array[i]);
+    }
+   
+    else {
+      continue;
+    }
+  }
+  console.log(x);
+  return x;
+}
+
+findLongestWord("The quick brown fox jumped over the lazy dog");  
+</script>
+</html>

@@ -1,0 +1,42 @@
+<script>
+"use strict";    
+    
+    //return an array consisting of the largest # from each sub-array
+    
+    
+  function largestOfFour(arr)
+  {
+    var numbersArray = [];
+    var largestNumber;
+    
+    for (var x=0; x<arr.length; x++)
+    {
+      largestNumber = null;
+     
+      //second loop for grabbing the 2d array items
+     for (var y =0; y<arr[x].length; y++)
+     {
+        
+        
+        if (arr[x][y] > largestNumber || largestNumber === null)
+        {
+          largestNumber = arr[x][y];
+          
+        }
+        
+        
+        
+     }
+    
+      numbersArray.push(largestNumber);
+    
+    }
+    console.log(numbersArray);
+    return numbersArray;
+  }
+
+largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])
+    
+    
+    
+</script>
