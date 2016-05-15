@@ -1,0 +1,51 @@
+<script>
+    
+    //Write a function which takes a
+    //ROT13 encoded string as input and returns a decoded string.
+    //All letters will be uppercase. Do not transform any non-alphabetic character
+    //(i.e. spaces, punctuation), but do pass them on.
+    function rot13(str)
+    {
+        var decodedArray =[];
+        
+        //push all letters to decodedArray as numbers
+        for ( var x=0; x<str.length; x++)
+        {
+           decodedArray.push(str.charCodeAt([x]));
+           
+           //code above 90 and below is punctuation. don't change.
+            if (decodedArray[x] <= 90 && decodedArray[x] >= 65)
+            {
+                 
+                 if (decodedArray[x] < 78)
+                 {
+                    decodedArray[x] = decodedArray[x] +13;
+                 }
+                 else
+                 {
+                  decodedArray[x] = decodedArray[x] -13;               
+                 }
+            }
+            
+           
+        }
+        
+        //convert unicode numbers back into text
+        for (var x=0; x<decodedArray.length; x++)
+        {
+            decodedArray[x] = String.fromCharCode(decodedArray[x]);
+        }
+        
+        console.log( decodedArray.join(""));
+        return decodedArray.join("");
+    }
+    
+    
+    rot13("SERR PBQR PNZC"); // "FREE CODE CAMP"
+    rot13("SERR CVMMN!") // "FREE PIZZA!"
+    rot13("SERR YBIR?") // "FREE LOVE!"
+    rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK."); // "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX."
+    
+    
+    
+</script>

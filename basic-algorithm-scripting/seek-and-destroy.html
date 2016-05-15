@@ -1,0 +1,78 @@
+<script>
+ 
+    //Remove all elements from the initial array that are of the same value as the arguments.
+    // Arguments can be 1 or more.
+    function destroyer()
+    {
+        var initalArray;
+        var destroyersArray =[];
+        var finalArray =[];
+        
+        initalArray = arguments[0];
+        
+        
+        //grab all arguments after 0 index and put into destroyersArray
+        for (var i=1; i<arguments.length; i++)
+        {
+        
+           destroyersArray.push(arguments[i]);
+            
+         }
+    
+    
+    
+        function notMatched(item)
+        {
+            for (var x=0; x<destroyersArray.length; x++)
+            {
+                
+                
+                //console.log(item);
+                //console.log(destroyersArray[x]);
+                
+                //if matches, return false to the filter
+                if (item === destroyersArray[x])
+                {
+                    console.log(item);
+                    return false;
+                
+                }
+                
+            }
+            //itme passes filters, return true
+            return true;
+            
+            
+        }
+    
+    
+        console.log(finalArray);
+        return finalArray = initalArray.filter(notMatched);
+         
+    
+    }
+         //two loops to match chars 
+    //    for (var i=0; i<initalArray.length; i++)
+    //    {
+    //        
+    //        for (var y =0; y<destroyersArray.length; y++)
+    //        {
+    //            
+    //           if (initalArray[i] !== destroyersArray[y])
+    //           {
+    //              finalArray.push(initalArray[i]);
+    //           }
+    //        }
+    //    
+    //    }
+    //    
+   
+    //    return finalArray;
+    //}
+  
+  destroyer([1, 2, 3, 1, 2, 3], 2, 3); // [1,1]
+  destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) // [1, 5, 1]
+  destroyer([3, 5, 1, 2, 2], 2, 3, 5) // [1]
+  destroyer([2, 3, 2, 3], 2, 3) // []
+  destroyer(["tree", "hamburger", 53], "tree", 53) // ["hamburger"]
+</script>
