@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<script>
+    //Return true if the string in the first element of the array
+    //contains all of the letters of the string in the second element of the array.
+    function mutation(arr)
+    {
+        var firstString;
+        var secondString;
+        
+        firstString = arr[0].toLowerCase();
+        secondString = arr[1].toLowerCase();
+        
+       
+        
+        for (x=0; x<secondString.length; x++)
+        {
+            
+            for (y=0; y<firstString.length; y++)
+            {
+                
+                if (secondString[x] == firstString[y])
+                {
+                    
+                    break;
+                }
+                  //if letters haven't matched yet, but loop has more iterations, continue
+                else if (secondString[x] !== firstString[y] && y < (firstString.length - 1) )
+                {
+                    continue;    
+                    
+                }
+                
+                else
+                {
+                    console.log(false);
+                    return false; //immediately return false and terminate loop if letter doesn't match
+                }
+                
+            }
+
+        }
+        
+        console.log(true);
+        return true; //if program gets to here, all letters have matched
+        
+        
+    }
+
+    mutation(["hello", "hey"]); // false
+    mutation(["hello", "Hello"]); // true
+    mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]); // true
+    mutation(["Mary", "Army"]); // true 
+    mutation(["Mary", "Aarmy"]); // true
+    mutation(["Alien", "line"]); // true
+    mutation(["floor", "for"]); // true
+    mutation(["hello", "neo"]); // false
+    mutation(["voodoo", "no"]); // false
+    
+</script>
