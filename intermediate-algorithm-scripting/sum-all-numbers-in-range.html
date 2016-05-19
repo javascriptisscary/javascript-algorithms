@@ -1,0 +1,45 @@
+<script>
+    //We'll pass you an array of two numbers. Return the sum of those two numbers
+    //and all numbers between them.
+
+    //The lowest number will not always come first.
+    
+    function sumAll(arr)
+    {
+        var sorted;
+        var sum = 0;
+        var y =1; // y will increment plus 1 for each loop 
+        
+        //sort array so lowest number is always first
+        sorted = arr.sort(function(a,b){ return a-b;});
+        
+        //loop will run n times. n=sorted[1] - sorted[0]
+        for (x=0; x<(sorted[1] - sorted[0]); x++)
+        {
+           //how the hell i figured this out, i'm not even sure ;)
+           if (x === 0)
+           {
+               sum += sorted[0] + sorted[0] + y;
+           }
+           else
+           {
+               sum += sorted[0] +y;
+               
+           }
+           document.write(" looping " +sum);
+           y++
+        }
+        
+        document.write(" sum = " + sum + "</br> ");
+        
+        return sum;
+    }
+   
+    
+    sumAll([1, 4]); // 10
+    sumAll([4, 1]); // 10
+    sumAll([5, 10]); // 45
+    sumAll([10, 5])  //45
+    
+    
+</script>
