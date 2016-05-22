@@ -1,0 +1,132 @@
+<script>
+    
+    //Convert the given number into a roman numeral.
+    function convertToRoman(num)
+    {
+        var first; //first letter in Roman Numeral
+        var second;
+        var previous;
+        var numString = num.toString();
+        
+        //document.write(numString.charAt(0));
+    
+    
+    
+    //Currently only 1 digit numbers work correctly.
+    
+        if (num > 0 && num < 5)
+        {
+            first = "I";
+            middle = "V";
+        }
+        
+        else if (num >= 5 && num < 10 )
+        {
+            previous = "I";
+            first = "V";
+            middle = "X";
+        }
+    
+        else if (num >= 10 && num < 50)
+        {
+            previous = "V";
+            first = "X";
+            middle = "L";
+        }
+    
+        else if (num >= 50 && num < 100)
+        {
+            previous = "X";
+            first = "L";
+            middle = "C";
+        }
+        
+        else if (num >= 100 && num < 500)
+        {
+            previous = "L";
+            first = "C";
+            middle = "D";
+        }
+        
+        else if (num >= 500 && num < 1000)
+        {
+            previous = "C";
+            first = "D";
+            middle = "M";
+        }
+        
+        else //over 1000
+        {
+            previous = "D";
+            first = "M";
+            
+        }
+        
+        // end of first if/else statement for first number
+        //change numstring to a variable
+        
+        if (numString.charAt(0) < 4)
+        {
+           document.write(first =  first.repeat(numString.charAt(0)) + "\n");
+        }
+        
+        else if (numString.charAt(0) == 4)
+        {
+            document.write(first =  first + middle + "\n");
+        }
+        
+        else if (numString.charAt(0) == 5 )
+        {
+            document.write(first + "\n");
+        }
+        
+        else if (numString.charAt(0) > 5 && numString.charAt(0) < 9 )
+        {
+            document.write(first = middle + previous.repeat(numString.charAt(0) -5) + "\n");
+        }
+        
+        else // == 9
+        {
+            document.write(first =  previous + middle + "\n");
+        }
+        //else if (numString.charAt(0) == 5)
+        //{
+        //    console.log(first);
+        //    document.write(first =  first + "V" + "\n");
+        //    
+        //}
+        
+        
+    };
+    
+    
+    convertToRoman(2); // II
+    convertToRoman(3); // III
+    convertToRoman(4); // IV
+    convertToRoman(5); // V
+    convertToRoman(7); // V
+    convertToRoman(9); // IX
+    //convertToRoman(12); // XII
+    //convertToRoman(16); // XVI
+    //convertToRoman(29); // XXIX
+    //convertToRoman(44); // XLIV
+    //convertToRoman(45); // XLV
+    //convertToRoman(68); // LXVIII
+    //convertToRoman(83); // LXXXIII
+    //convertToRoman(97); // XCVII
+    //convertToRoman(99); // XCIX
+    //convertToRoman(500); // D
+    //convertToRoman(501); // DI
+    //convertToRoman(649); // DCXLIX
+    //convertToRoman(798); // DCCXCVIII
+    //convertToRoman(891); // DCCCXCI
+    //convertToRoman(1000); // M
+    //convertToRoman(1004); // MIV
+    //convertToRoman(1006); // MVI
+    //convertToRoman(1023); // MXXIII
+    //convertToRoman(2014); // MMXIV
+    //convertToRoman(3999); // MMMCMXCIX
+    
+    
+    
+</script>
